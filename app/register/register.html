@@ -1,0 +1,57 @@
+<form
+  name="createUserForm"
+  data-toggle="validator"
+  role="form"
+  ng-submit="createUser()"
+  ng-controller="RegisterCtrl">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" ng-model="email" placeholder="you@yourdomain.com">
+  </div>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input
+      id="username"
+      name="username"
+      type="username"
+      class="form-control"
+      ng-model="username"
+      ng-minlength="2">
+    <div class="help-block">Minimum of 2 characters</div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Enter Password:</label>
+    <input
+      id="inputPassword"
+      name="inputPassword"
+      ng-change="validatePassword()"
+      ng-model="inputPassword"
+      type="password"
+      class="form-control"
+      required>
+    <div
+      class="alert alert-danger"
+      ng-show="createUserForm.inputPassword.$touched &&
+               passwordIsValid === true">
+      {{validationFailMessage}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPasswordConfirm">Confirm Password:</label>
+    <input
+      id="inputPasswordConfirm"
+      name="inputPasswordConfirm"
+      ng-change="confirmPassword()"
+      ng-model="inputPasswordConfirm"
+      type="password"
+      class="form-control"
+      required>
+      <div
+        class="alert alert-danger fade in"
+        ng-show="createUserForm.inputPasswordConfirm.$touched &&
+                 passwordMatches === false">
+        Passwords must match
+      </div>  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="reset" class="btn btn-default">Clear</button>
+</form>
