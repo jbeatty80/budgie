@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "budgie",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.0.1",
+  "description": "Easy, private, and secure budgeting.",
+  "repository": "https://github.com/jbeatty80/budgie",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
@@ -35,6 +35,7 @@
     "angular-formly": "^8.2.1",
     "angular-formly-templates-bootstrap": "^6.4.0",
     "api-check": "^7.5.5",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "browserify": "^13.0.1"
   }
 }
